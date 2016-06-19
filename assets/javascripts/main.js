@@ -1,1 +1,1 @@
-alert('ReduxLearning!');
+alert('Test contribute!');
