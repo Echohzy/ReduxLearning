@@ -7,9 +7,15 @@
     "co-views": "^2.1.0",
     "ejs": "^2.4.2",
     "koa": "^1.2.0",
-    "koa-route": "^2.4.2"
+    "koa-route": "^2.4.2",
+    "koa-static": "^2.0.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
