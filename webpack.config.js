@@ -3,14 +3,11 @@ var webpack = require('webpack');
 var node_modules = path.resolve(__dirname,'node_modules');
 var pathToReact = path.resolve(node_modules, 'react/dist/react.min.js');
 module.exports = {
-  entry: {
-    app1234:[
-    'webpack/hot/dev-server',
-    'webpack-dev-server/client?http://127.0.0.1:8080',
-    './app/main.jsx'
-  ]},
+  entry: [
+    './assets/javascripts/main.js'
+    ],
   output: {
-    path: path.resolve(__dirname,'build'),
+    path: path.resolve(__dirname,'assets/build'),
     filename: '[name].js',
     publicPath: '/'
   },
@@ -18,12 +15,9 @@ module.exports = {
     extensions: ['', '.js', '.jsx'],
   },
   plugins: [
+   new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    })
+    new webpack.NoErrorsPlugin()
   ],
   module: {
     loaders: [
