@@ -5,10 +5,10 @@ module.exports = {
     entry: {
       bundle:[
         'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
-        './assets/javascripts/main.js'
+        './public/javascripts/main.jsx'
     ]},
     output: {
-        path: path.resolve(__dirname, "assets/build"),
+        path: path.resolve(__dirname, "public/build"),
         publicPath: '/',
         filename: '[name].js'
     },
@@ -20,6 +20,12 @@ module.exports = {
     ],
     module: {
       loaders: [
+        {
+        test: /\.js[x]$/,
+        loaders: [ 'babel' ],
+        exclude: /node_modules/,
+        include: __dirname
+      },
         { test: /\.less$/,
           loaders: ["style-loader",'css-loader','less-loader']
         },

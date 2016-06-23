@@ -17,7 +17,7 @@ app.use(hotMiddleware(compiler, {
     log: console.log, path: '/__webpack_hmr', heartbeat: 10 * 1000
 }));
 
-app.use(serve('./assets'));
+app.use(serve('./public'));
 app.use(main.get);
 
 
