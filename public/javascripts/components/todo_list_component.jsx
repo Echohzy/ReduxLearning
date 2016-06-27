@@ -6,11 +6,11 @@ var TodoListComponent = React.createClass({
         {
           this.props.todos.map(function(value, index){
             return (
-              <li key={index}>
+              <li key={index} onClick={()=>this.props.completeTodo(index)}>
                 {value.text}
               </li>
             )
-          })
+          },this)
         }
       </div>
     );
