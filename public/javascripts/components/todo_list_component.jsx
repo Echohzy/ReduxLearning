@@ -6,7 +6,7 @@ var TodoListComponent = React.createClass({
         {
           this.props.todos.map(function(value, index){
             return (
-              <li>
+              <li key={index}>
                 {value.text}
               </li>
             )

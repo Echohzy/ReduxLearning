@@ -1,6 +1,6 @@
 
 import { combineReducers } from 'redux';
-import { ADD_TODO, COMPLETE_TODO, SET_FILTER, Filters} from '../actions/todo_action.js';
+import { ADD_TODO, COMPLETE_TODO, SET_FILTER, Filters} from '../actions/todo_action.jsx';
 
 var filter = function(state = Filters.SHOW_ALL, action){
   switch(action.type){

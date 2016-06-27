@@ -20,11 +20,16 @@ module.exports = {
     module: {
       loaders: [
         {
-        test: /\.jsx$/,
+        test: /\.js[x]$/,
         exclude: /node_modules/,
         loaders: [ "babel" ],
+        include: path.join(__dirname, 'public/javascripts')
         
-      },
+        },
+        {
+         test: /\.js$/,
+        loaders: [ "babel" ],
+        },
         { test: /\.less$/,
           loaders: ["style-loader","css-loader"]
         },
