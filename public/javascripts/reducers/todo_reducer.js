@@ -28,7 +28,7 @@ var todos = function(state = [], action){
         ...state.slice(action.index+1)
       ];
     default:
-      return state;
+      return state || [];
   };
 
 };

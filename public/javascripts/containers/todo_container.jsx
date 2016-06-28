@@ -10,8 +10,8 @@ var TodoContainer = React.createClass({
     return (
       <div>
         <TodoTop addTodo={this.props.addTodo} />
-        <TodoList todos={this.props.todos} completeTodo={this.props.completeTodo}/>
-        <TodoFooter setFilter={this.props.setFilter}/>
+        <TodoList todos={this.props.todos} completeTodo={this.props.completeTodo} />
+        <TodoFooter filter={this.props.filter} setFilter={this.props.setFilter} />
       </div>
     );
   }
@@ -23,7 +23,7 @@ function todos(todos, filter){
       return todos;
     case Filters.SHOW_ACTIVE:
       return todos.filter(todo => !todo.completed);
-    case Filters.SHOW_COMPLETED:
+    case Filters.SHOW_COMPLETE:
       return todos.filter(todo => todo.completed);
   }
 }
