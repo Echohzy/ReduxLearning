@@ -4,18 +4,7 @@ import TodoList from '../components/todo_list_component.jsx';
 import TodoFooter from '../components/todo_footer_component.jsx';
 import { Filters, addTodo, completeTodo, setFilter } from '../actions/todo_action.jsx';
 import { connect } from 'react-redux';
-
-var TodoContainer = React.createClass({
-  render: function(){
-    return (
-      <div>
-        <TodoTop addTodo={this.props.addTodo} />
-        <TodoList todos={this.props.todos} completeTodo={this.props.completeTodo} />
-        <TodoFooter filter={this.props.filter} setFilter={this.props.setFilter} />
-      </div>
-    );
-  }
-});
+import TodoContainer from '../components/todo_container.jsx';
 
 function todos(todos, filter){
   switch(filter){
@@ -33,7 +22,7 @@ function mapStateToProps(state, ownProp){
   return {
     filter: state.filter,
     todos: todos(state.todos, state.filter)
-  }
+  };
 }
 
 function mapDispatchToProps(dispatch){
@@ -47,7 +36,7 @@ function mapDispatchToProps(dispatch){
     setFilter: function(filter){
       dispatch(setFilter(filter));
     }
-  }
+  };
 }
 
 
