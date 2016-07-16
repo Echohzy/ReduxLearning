@@ -24,21 +24,20 @@ module.exports = {
         exclude: /node_modules/,
         loaders: [ "babel" ],
         include: path.join(__dirname, 'public/javascripts')
-        
         },
         {
          test: /\.js$/,
         loaders: [ "babel" ],
         },
-        { test: /\.css$/,
-          loaders: "style-loader!css-loader!postcss-loader"
+        { test: /\.less$/,
+          loaders: ["style-loader","css-loader", "postcss-loader"]
         },
         { test: /\.(png|jpg)$/,
           loaders: ['url?limit=25000']
         }
       ],
     },
-    postcss: function () {
-        return [require('autoprefixer'), require('precss')];
+    postcss: function(){
+        return [require('autoprefixer'), require('postcss-cssnext')];
     }
 };
