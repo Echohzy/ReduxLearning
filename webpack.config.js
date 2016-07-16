@@ -30,12 +30,15 @@ module.exports = {
          test: /\.js$/,
         loaders: [ "babel" ],
         },
-        { test: /\.less$/,
-          loaders: ["style-loader","css-loader"]
+        { test: /\.css$/,
+          loaders: "style-loader!css-loader!postcss-loader"
         },
         { test: /\.(png|jpg)$/,
           loaders: ['url?limit=25000']
         }
       ],
     },
+    postcss: function () {
+        return [require('autoprefixer'), require('precss')];
+    }
 };
