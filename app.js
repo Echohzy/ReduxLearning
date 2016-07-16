@@ -6,8 +6,10 @@ var hotMiddleware = require("koa-webpack-hot-middleware");
 var webpackConfig = require('./webpack.config');
 var main = require("./routes/main.js");
 
+
 var app = koa();
 var compiler = webpack(webpackConfig);
+
 
 app.use(devMiddleware(compiler, {
     noInfo: true, publicPath: webpackConfig.output.publicPath
@@ -18,6 +20,7 @@ app.use(hotMiddleware(compiler, {
 }));
 
 app.use(serve('./public'));
+app.use(main.get2);
 app.use(main.get);
 
 

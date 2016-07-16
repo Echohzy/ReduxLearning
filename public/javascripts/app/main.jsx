@@ -1,12 +1,12 @@
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
+var ReactDOM = require('react-dom');require("turbolinks");
 import React from 'react';
 import TodoContainer from '../containers/todo_container.jsx';
 import thunkMiddleware from 'redux-thunk';
 import {createStore, applyMiddleware, compose} from 'redux';
 import TodoReducer from '../reducers/todo_reducer.js';
 import { Provider } from 'react-redux';
-require("turbolinks")
-Turbolinks.start()
+
 //import Turbolinks from 'turbolinks';
 
 //var store = applyMiddleware(thunkMiddleware)(createStore)(TodoReducer);
