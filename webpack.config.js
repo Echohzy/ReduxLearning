@@ -3,7 +3,7 @@ var path = require('path');
 
 module.exports = {
     entry: {
-      bundle:[
+      main:[
         'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
         './public/javascripts/app/main.jsx'
     ]},
@@ -29,7 +29,7 @@ module.exports = {
          test: /\.js$/,
         loaders: [ "babel" ],
         },
-        { test: /\.less$/,
+        { test: /\.css$/,
           loaders: ["style-loader","css-loader", "postcss-loader"]
         },
         { test: /\.(png|jpg)$/,
