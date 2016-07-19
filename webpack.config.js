@@ -32,8 +32,8 @@ module.exports = {
         { test: /\.css$/,
           loaders: ["style-loader","css-loader", "postcss-loader"]
         },
-        { test: /\.(png|jpg|gif|woff|eot|tff|svg)$/,
-          loaders: ['url?limit=25000']
+        { test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, 
+          loader: 'url-loader?limit=50000&name=[path][name].[ext]'
         }
       ],
     },
