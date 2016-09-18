@@ -25,3 +25,4 @@ app.use(main.get);
 
 
 app.listen(8080);
+console.log("lalalalalalala");
